@@ -1,0 +1,1951 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anika Institute of Excellence | Official Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pattern text-slate-800" x-data="portalData()">
+
+    <div class="bg-indigo-900 text-white text-[10px] py-2 px-6 flex justify-between items-center font-bold tracking-widest uppercase">
+        <div><i class="fas fa-phone-alt mr-2"></i> +91 22 4567 8900</div>
+        <div class="hidden md:block">Admissions Open for Session 2026-27 | Apply before June 30th</div>
+        <div><i class="fas fa-envelope mr-2"></i> info@anika.edu.in</div>
+    </div>
+  </div>
+
+  <!-- Hamburger Icon -->
+<div class="flex items-center px-6 py-4 bg-white"> 
+  
+  <button id="menu-btn" class="text-slate-900 focus:outline-none hover:text-indigo-600 transition-colors">
+    <i class="fas fa-bars text-3xl"></i>
+  </button>
+  </div>
+
+<div id="mobile-menu" class="hidden fixed inset-0 z-[100] flex">
+  <div class="fixed inset-0 bg-black/50" id="overlay"></div>
+
+  <div class="relative w-72 h-full bg-[#1e293b] text-white px-6 py-8 space-y-8 overflow-y-auto shadow-2xl">
+    
+    <div>
+      <h3 class="font-bold text-indigo-400 uppercase text-xs mb-4">Admissions Open</h3>
+      <ul class="space-y-4 text-sm">
+        <li>
+          BTech – <span class="text-slate-400">1 April 2026</span>
+        </li>
+        <li>
+          MBA – <span class="text-slate-400">5 April 2026</span>
+        </li>
+        <li>
+          Data Analytics – <span class="text-slate-400">20 April 2026</span>
+        </li>
+        <li>
+          Information Technology – <span class="text-slate-400">25 April 2026</span>
+        </li>
+        <li>
+          Biotechnology – <span class="text-slate-400">30 April 2026</span>
+        </li>
+      </ul>
+    </div>
+
+ <div class="p-6 space-y-10">
+    <div>
+        <h3 class="text-xs font-black text-emerald-400 uppercase tracking-[0.2em] mb-6 flex items-center">
+            <span class="w-8 h-[1px] bg-emerald-400 mr-3"></span> Live Updates
+        </h3>
+        <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 text-center py-2 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="block text-xs font-black text-white">24</span>
+                    <span class="block text-[8px] text-slate-400 uppercase font-bold">Mar</span>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white leading-tight">Tech-Expo 2026</h4>
+                    <p class="text-xs text-slate-500">Main Auditorium, 10 AM</p>
+                </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 text-center py-2 bg-slate-800 rounded-xl border border-slate-700">
+                    <span class="block text-xs font-black text-white">02</span>
+                    <span class="block text-[8px] text-slate-400 uppercase font-bold">Apr</span>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white leading-tight">Admission Webinar</h4>
+                    <p class="text-xs text-slate-500">Online via Zoom</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 rounded-[30px] bg-gradient-to-br from-indigo-900/40 to-slate-900 border border-indigo-500/30">
+        <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-bold text-indigo-300 uppercase tracking-widest">Placement 2025</span>
+            <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+        </div>
+        <div class="text-3xl font-black text-white">98.2%</div>
+        <p class="text-[10px] text-slate-400 mt-1 italic">Highest package: ₹45 LPA</p>
+    </div>
+</div>
+
+    <div class="space-y-3 pt-4">
+      <button @click="page = 'apply'; open = false" 
+        class="w-full bg-indigo-600 py-4 rounded-2xl text-white text-xs font-black uppercase tracking-widest hover:bg-indigo-500 transition shadow-lg active:scale-95">
+    APPLY ONLINE NOW
+</button>
+      <button id="close-btn" class="w-full border border-slate-600 px-4 py-3 rounded font-bold text-xs uppercase tracking-widest hover:bg-slate-700 transition-colors">
+        Close Menu
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+  const overlay = document.getElementById('overlay');
+
+  const toggleMenu = () => mobileMenu.classList.toggle('hidden');
+
+  menuBtn.addEventListener('click', toggleMenu);
+  closeBtn.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu); // Closes menu if user clicks outside
+</script>
+
+    <nav class="glass shadow-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+            <div class="flex items-center space-x-3 cursor-pointer" @click="page = 'home'">
+                <div class="bg-indigo-700 p-2.5 rounded-xl text-white shadow-lg shadow-indigo-200">
+                    <i class="fas fa-university fa-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-black text-2xl tracking-tighter text-slate-900 leading-none">ANIKA <span class="text-indigo-600">INSTITUTE</span></h1>
+                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Transforming Lives</span>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex space-x-8 items-center font-bold text-[13px] uppercase tracking-wide">
+                <button @click="page = 'home'" :class="page === 'home' ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-500'">Home</button>
+                <button @click="page = 'about'" :class="page === 'about' ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-500'">About</button>
+                <button @click="page = 'academics'" :class="page === 'academics' ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-500'">Academics</button>
+                
+                <div class="relative group py-2">
+                    <span class="cursor-pointer text-slate-600 group-hover:text-indigo-500">Admissions <i class="fas fa-chevron-down text-[10px] ml-1"></i></span>
+                    <div class="absolute hidden group-hover:block top-full -left-4 w-56 bg-white shadow-2xl rounded-2xl border p-2 mt-1 animate-fade">
+                        <button @click="page = 'apply'" class="w-full text-left px-4 py-3 hover:bg-indigo-50 rounded-xl transition text-slate-700">Apply Online</button>
+                        <button @click="page = 'status'" class="w-full text-left px-4 py-3 hover:bg-indigo-50 rounded-xl transition text-slate-700">Check App Status</button>
+                        <button @click="page = 'pay'" class="w-full text-left px-4 py-3 hover:bg-indigo-50 rounded-xl transition text-slate-700">Online Fee Payment</button>
+                    </div>
+                </div>
+
+                <button @click="page = 'gallery'" :class="page === 'gallery' ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-500'">Gallery</button>
+                <button @click="page = 'student corner'" :class="page === 'student corner' ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-500'">Students</button>
+                <button @click="page = 'contact'" :class="page === 'contact' ? 'text-indigo-600' : 'text-slate-600 hover:text-indigo-500'">Contact</button>
+                
+                <button x-show="!userRole" @click="page = 'login'" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-indigo-600 transition shadow-lg text-[11px] font-bold uppercase">PORTAL LOGIN</button>
+                
+                <div x-show="userRole" class="flex items-center space-x-4">
+                    <span class="text-[10px] bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full font-black uppercase" x-text="userRole"></span>
+                    <button @click="logout()" class="text-red-500 hover:text-red-700 transition font-black text-[10px] uppercase tracking-widest"><i class="fas fa-sign-out-alt mr-1"></i> LOGOUT</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Home  -->
+    <section x-show="page === 'home'" x-cloak class="animate-fade bg-slate-50/50 space-y-20 pb-20">
+            <div class="bg-indigo-950 py-6 border-y border-white/5 overflow-hidden mt-12">
+        <div class="flex items-center whitespace-nowrap animate-scroll">
+            <div class="flex items-center gap-12 mx-8">
+                <span class="flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.3em]">
+                    <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse shadow-[0_0_10px_#facc15]"></span> Admissions 2026 Open
+                </span>
+                <span class="flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.3em]">
+                    <span class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse shadow-[0_0_10px_#818cf8]"></span> NIRF Ranked #12
+                </span>
+                <span class="flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.3em]">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_#34d399]"></span> 95% Placements
+                </span>
+            </div>
+            <div class="flex items-center gap-12 mx-8">
+                <span class="flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.3em]">
+                    <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span> Admissions 2026 Open
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="relative bg-indigo-950 py-24 px-6 overflow-hidden rounded-b-[40px] shadow-2xl">
+        <div class="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 items-center gap-12">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-indigo-100 text-xs font-bold tracking-wide">
+                    <span class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+                    <span>NIRF Ranked #12 in Excellence</span>
+                </div>
+                <h2 class="text-5xl font-black text-white leading-tight tracking-tighter">
+                    Build a Career <br> That <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Matters.</span>
+                </h2>
+                <p class="text-lg text-indigo-100/60 leading-relaxed max-w-lg">
+                    India's premier institute for technology and research. Empowering students with cutting-edge skills.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <button @click="page = 'apply'" class="bg-indigo-600 hover:bg-indigo-600 text-white px-10 py-6 rounded-xl font-black text-lg shadow-2xl hover:-translate-y-1 transition-all duration-300 tracking-tight">
+                        START YOUR JOURNEY &rarr;
+                    </button>
+                    <div class="flex -space-x-3 italic">
+                        <div class="w-10 h-10 rounded-full border-2 border-indigo-900 bg-indigo-500 flex items-center justify-center text-[10px] font-bold text-white shadow-lg">A+</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-indigo-900 bg-emerald-500 flex items-center justify-center text-[10px] font-bold text-white shadow-lg">12th</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute right-[-5%] top-[-10%] w-[450px] h-[450px] bg-indigo-600/20 blur-[120px] rounded-full"></div>
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-indigo-900/40 skew-x-12 transform translate-x-20"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto -mt-16 relative z-30 px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <template x-for="stat in [
+            {label: 'Placement Record', val: '95%', icon: 'fa-user-graduate', col: 'text-emerald-500'},
+            {label: 'Industry Partners', val: '200+', icon: 'fa-laptop-code', col: 'text-indigo-600'},
+            {label: 'Accreditation', val: 'NAAC A++', icon: 'fa-award', col: 'text-amber-500'},
+            {label: 'Research Labs', val: '50+', icon: 'fa-microscope', col: 'text-cyan-500'}
+        ]">
+            <div class="bg-white/95 backdrop-blur-xl p-6 rounded-[32px] shadow-xl border border-white/50 flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-500 group">
+                <div :class="`w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-3 group-hover:bg-indigo-50 transition duration-500` text-xl">
+                    <i :class="`fas ${stat.icon} ${stat.col}`"></i>
+                </div>
+                <h4 class="text-2xl font-black text-slate-900" x-text="stat.val"></h4>
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest mt-1" x-text="stat.label"></p>
+            </div>
+        </template>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative group">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-indigo-500 to-cyan-400 opacity-20 blur-2xl group-hover:opacity-30 transition"></div>
+            <img src="https://images.shiksha.com/mediadata/images/articles/1744019588phpVCRWzS.jpeg" class="rounded-[40px] shadow-2xl relative z-10 border-4 border-white object-cover h-[450px] w-full" alt="Campus">
+            <div class="absolute bottom-8 left-8 z-20 bg-white/95 backdrop-blur-md p-5 rounded-3xl shadow-xl border border-white">
+                <p class="text-indigo-600 font-black text-2xl leading-none">30+</p>
+                <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mt-1">Years of Legacy</p>
+            </div>
+        </div>
+        <div class="space-y-6">
+            <div class="w-14 h-1.5 bg-indigo-600 rounded-full"></div>
+            <h3 class="text-indigo-600 font-black tracking-[0.2em] uppercase text-xs">Welcome to Our Institution</h3>
+            <h2 class="text-4xl font-black text-slate-900 tracking-tighter leading-tight">A Tradition of <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">Academic Excellence</span></h2>
+            <p class="text-slate-600 leading-relaxed text-md italic">Established with a vision to redefine education, we prepare you for the real world through hands-on projects and industry mentorship.</p>
+            <div class="grid grid-cols-1 gap-3">
+                <div class="flex items-center space-x-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <i class="fas fa-check-circle text-emerald-500 text-lg"></i>
+                    <span class="text-slate-700 font-bold text-sm">World-class PhD faculty from global universities.</span>
+                </div>
+                <div class="flex items-center space-x-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <i class="fas fa-check-circle text-emerald-500 text-lg"></i>
+                    <span class="text-slate-700 font-bold text-sm">State-of-the-art 24/7 research labs.</span>
+                </div>
+            </div>
+
+            <!-- about page----->
+            <button @click="page = 'about'" class="group text-indigo-600 font-black text-md flex items-center gap-2 hover:gap-4 transition-all">
+                Discover More About Us <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-indigo-50/40 py-24 px-6 rounded-[60px] mx-4 shadow-inner">
+        <div class="max-w-7xl mx-auto text-center mb-16 space-y-4">
+            <h2 class="text-5xl font-black text-slate-900 tracking-tighter">Programs We Offer</h2>
+            <p class="text-slate-500 max-w-xl mx-auto font-medium text-md tracking-tight">Explore industry-standard programs designed for global success.</p>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-[40px] border border-white shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-50 rounded-bl-full opacity-50 group-hover:scale-150 transition-transform"></div>
+                <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-all duration-500">
+                    <i class="fas fa-laptop-code text-2xl text-indigo-600 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-black mb-3 text-slate-900 group-hover:text-indigo-600 transition">B.Tech CS</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">Specializations in AI, ML, and Cybersecurity for next-gen solutions.</p>
+                <div class="flex gap-2">
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-slate-100 rounded-lg tracking-widest">4 YEARS</span>
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-emerald-100 text-indigo-700 rounded-lg tracking-widest uppercase">Top Rated</span>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[40px] border border-white shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-rose-50 rounded-bl-full opacity-50 group-hover:scale-150 transition-transform"></div>
+                <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-rose-600 transition-all duration-500">
+                    <i class="fas fa-chart-line text-2xl text-rose-600 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-black mb-3 text-slate-900 group-hover:text-rose-600 transition">M.B.A</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">Mastering leadership with global case studies and internships.</p>
+                <div class="flex gap-2">
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-slate-100 rounded-lg tracking-widest">3 YEARS</span>
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-rose-100 text-rose-700 rounded-lg tracking-widest uppercase">MBA Prep</span>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[40px] border border-white shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-bl-full opacity-50 group-hover:scale-150 transition-transform"></div>
+                <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-all duration-500">
+                    <i class="fas fa-dna text-2xl text-emerald-600 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-black mb-3 text-slate-900 group-hover:text-emerald-600 transition">Biotechnology</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">Advanced research in genetics in our state-of-the-art labs.</p>
+                <div class="flex gap-2">
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-slate-100 rounded-lg tracking-widest">4 YEARS</span>
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-lg tracking-widest uppercase">Research</span>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[40px] border border-white shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-violet-50 rounded-bl-full opacity-50 group-hover:scale-150 transition-transform"></div>
+                <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-violet-600 transition-all duration-500">
+                    <i class="fas fa-dna text-2xl text-violet-600 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-black mb-3 text-slate-900 group-hover:text-violet-600 transition">Information Technology</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">Revolutionizing productivity by connecting people and automating tasks.</p>
+                <div class="flex gap-2">
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-slate-100 rounded-lg tracking-widest">4 YEARS</span>
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-violet-100 text-violet-700 rounded-lg tracking-widest uppercase">Research</span>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[40px] border border-white shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-amber-50 rounded-bl-full opacity-50 group-hover:scale-150 transition-transform"></div>
+                <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-all duration-500">
+                    <i class="fas fa-dna text-2xl text-amber-600 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-black mb-3 text-slate-900 group-hover:text-amber-600 transition">M.C.A</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">It is a professional postgraduate program focused on advanced software development, application programming, and business-oriented technology solutions.</p>
+                <div class="flex gap-2">
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-slate-100 rounded-lg tracking-widest">2 YEARS</span>
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-amber-100 text-amber-700 rounded-lg tracking-widest uppercase">Research</span>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[40px] border border-white shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-sky-50 rounded-bl-full opacity-50 group-hover:scale-150 transition-transform"></div>
+                <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-sky-600 transition-all duration-500">
+                    <i class="fas fa-dna text-2xl text-sky-600 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-black mb-3 text-slate-900 group-hover:text-sky-600 transition">Bsc. Data Analytics</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">It is the skills to collect, cleanse, analyze, and visualize complex data to drive actionable business decisions.</p>
+                <div class="flex gap-2">
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-slate-100 rounded-lg tracking-widest">3 YEARS</span>
+                    <span class="text-[9px] font-black px-2.5 py-1 bg-sky-100 text-sky-700 rounded-lg tracking-widest uppercase">Research</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-indigo-900 py-24 px-6 text-white overflow-hidden relative rounded-[60px] mx-4 shadow-2xl">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="space-y-8">
+                <h2 class="text-5xl font-black leading-tight tracking-tighter">Why Students <br><span class="text-indigo-400 italic">Choose Us?</span></h2>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-5 p-5 bg-white/5 rounded-[24px] border border-white/10 hover:bg-white/10 transition">
+                        <div class="bg-indigo-500 w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl text-lg"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Global Alumni Network</h4>
+                            <p class="text-indigo-200/50 text-[9px] font-black uppercase tracking-widest mt-1">Working at Google & Microsoft</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-5 p-5 bg-white/5 rounded-[24px] border border-white/10 hover:bg-white/10 transition">
+                        <div class="bg-indigo-500 w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl text-lg"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">100% Scholarships</h4>
+                            <p class="text-indigo-200/50 text-[9px] font-black uppercase tracking-widest mt-1">Based on Merit & Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-2xl p-10 rounded-[48px] border border-white/20 shadow-2xl relative">
+                <i class="fas fa-quote-left text-6xl text-indigo-400/20 absolute top-8 left-8"></i>
+                <p class="italic text-indigo-50 text-lg leading-relaxed mb-8 relative z-10 font-medium">
+                    "Choosing this institute was the best decision for my career. The hackathons organized here helped me land a job at a top tech giant before my final semester."
+                </p>
+                <div class="flex items-center space-x-4">
+                    <img src="https://ui-avatars.com/api/?name=Animesh+Sharma&background=6366f1&color=fff" class="w-14 h-14 rounded-xl border-2 border-indigo-400" alt="Student">
+                    <div>
+                        <p class="font-black text-white text-lg leading-none">Animesh Sharma</p>
+                        <p class="text-[10px] text-indigo-400 font-bold uppercase tracking-widest mt-2">B.Tech CS, Class of 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <svg width="100%" height="100%"><pattern id="gridL" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#gridL)" /></svg>
+        </div>
+    </div>
+</section>
+
+<!-- about -->
+<section x-show="page === 'about'" x-cloak class="animate-fade">
+            <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 text-center">
+    <div class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 mb-2">
+        <span class="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">Our Story</span>
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter mb-2">
+        About <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Anika Institute</span>
+    </h1>
+
+    <p class="max-w-xl mx-auto text-slate-500 text-sm md:text-base font-medium leading-snug mb-4">
+        Pioneering excellence in education through innovation and research to shape the leaders of tomorrow.
+    </p>
+
+    <div class="flex justify-center items-center gap-2 mb-8">
+        <div class="w-8 h-0.5 bg-slate-100 rounded-full"></div>
+        <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+        <div class="w-8 h-0.5 bg-slate-100 rounded-full"></div>
+    </div>
+</div>
+
+    <div class="max-w-7xl mx-auto py-20 px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-sm font-black text-indigo-600 uppercase tracking-widest mb-2">Our Legacy</h2>
+                <h3 class="text-5xl font-black text-slate-900 mb-6 leading-tight">Driving Innovation Since <span class="text-indigo-600">1995.</span></h3>
+                <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
+                    <p><b>Anika Institute</b> was founded on the principle that quality education should be accessible to all. What started as a small technical college in Mumbai has grown into a world-class multi-disciplinary research university.
+                        Our curriculum is designed in collaboration with giants like <strong class="text-slate-900">Google, Microsoft, and IBM</strong> to ensure our students are industry-ready from Day 1.</p>
+                    <p>At the heart of <b>Anika Institute</b> is a commitment to fostering innovation and critical thinking through a hands-on learning environment. 
+                        Our state-of-the-art campus in Mumbai serves as a melting pot of ideas, where students from diverse backgrounds come together to solve complex global challenges. With a faculty comprised of seasoned academicians and industry veterans, we provide a balanced education that values theoretical depth as much as practical application. 
+                        This unique ecosystem ensures that our graduates are not just employees, but leaders and innovators in their respective fields.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="h-120 bg-slate-200 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.pexels.com/photos/7683745/pexels-photo-7683745.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-full h-full object-cover">
+                </div>
+                <div class="h-80 mt-12 bg-slate-200 rounded-[40px] overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://media.getmyuni.com/azure/college-images-test/silicon-institute-of-technology-sit-bhubaneswar/902afcac8e1848428d7a2f1cf3b5fc98.jpeg" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-indigo-50 py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="bg-white p-10 rounded-[40px] shadow-sm hover:shadow-xl transition group">
+                <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-200">
+                    <i class="fas fa-eye text-white text-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-black mb-4">Our Vision</h4>
+                <p class="text-slate-500 leading-relaxed">To be a globally recognized institution that fosters creativity, innovation, and excellence in education and research for a better tomorrow.</p>
+            </div>
+            <div class="bg-white p-10 rounded-[40px] shadow-sm hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-200">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-black mb-4">Our Mission</h4>
+                <p class="text-slate-500 leading-relaxed">To empower students with practical knowledge, ethical values, and leadership skills required to solve complex real-world challenges.</p>
+            </div>
+            <div class="bg-white p-10 rounded-[40px] shadow-sm hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-200">
+                    <i class="fas fa-heart text-white text-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-black mb-4">Core Values</h4>
+                <p class="text-slate-500 leading-relaxed">Integrity, Diversity, and Lifelong Learning are the pillars of our community that guide every student and faculty member.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-24 px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl font-black text-slate-900 mb-4">Our Journey Through Years</h2>
+            <p class="text-slate-500 italic">Evolution of excellence from a small college to a global hub.</p>
+        </div>
+        <div class="relative border-l-4 border-indigo-100 ml-6 md:ml-0 md:grid md:grid-cols-2 md:border-l-0 md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:w-1 md:after:h-full md:after:bg-indigo-100">
+            <div class="mb-12 relative md:pr-12 md:text-right">
+                <div class="absolute -left-10 md:left-auto md:-right-4 w-8 h-8 bg-indigo-600 rounded-full border-4 border-white z-10 shadow-lg"></div>
+                <h4 class="text-3xl font-black text-indigo-600">1995</h4>
+                <p class="text-xl font-bold text-slate-800">Foundation Laid</p>
+                <p class="text-slate-500">Started with 3 departments and a dream to provide quality tech education.</p>
+            </div>
+            <div class="hidden md:block"></div>
+            <div class="hidden md:block"></div>
+            <div class="mb-12 relative md:pl-12">
+                <div class="absolute -left-10 md:-left-4 w-8 h-8 bg-indigo-600 rounded-full border-4 border-white z-10 shadow-lg"></div>
+                <h4 class="text-3xl font-black text-indigo-600">2010</h4>
+                <p class="text-xl font-bold text-slate-800">Research Excellence Award</p>
+                <p class="text-slate-500">Recognized nationally for breakthroughs in Biotechnology and Sustainable Tech.</p>
+            </div>
+            <div class="mb-12 relative md:pr-12 md:text-right">
+                <div class="absolute -left-10 md:left-auto md:-right-4 w-8 h-8 bg-indigo-600 rounded-full border-4 border-white z-10 shadow-lg"></div>
+                <h4 class="text-3xl font-black text-indigo-600">2026</h4>
+                <p class="text-xl font-bold text-slate-800">Global Tech Partner</p>
+                <p class="text-slate-500">Official collaboration with Silicon Valley giants for AI-driven curriculum.</p>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto py-12 px-6">
+    <div class="bg-slate-900 rounded-[40px] p-12 text-white">
+        <h3 class="text-3xl font-black mb-6">Why Anika Institute Stands Out</h3>
+        <p class="text-slate-300 leading-relaxed max-w-3xl">
+            At Anika Institute, we foster an environment where tradition meets technology. Our commitment to excellence is reflected in our robust research infrastructure, dedicated mentorship programs, and a curriculum that evolves with global industry standards. We believe in nurturing not just professionals, but socially responsible leaders prepared to shape the future of technology in Mumbai and beyond.
+        </p>
+    </div>
+</div>
+    
+    <div class="bg-slate-50 py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-black text-slate-900 mb-4">Mentors Who Inspire</h2>
+                    <p class="text-slate-500 text-lg leading-relaxed">Our faculty members are not just teachers; they are industry veterans, researchers, and global consultants with over 500+ published papers.</p>
+                </div>
+                <div class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold">85% PhD Faculty</div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-[32px] h-96">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe5iiRnrdZMwzSPCu_cnee7e89GQT_WSsfqQ&s" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-950 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h5 class="font-black text-xl leading-none">Prof. Rohini Bhosale</h5>
+                        <p class="text-indigo-300 text-xs font-bold uppercase mt-2">Linux Administration</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] h-96">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5K7-OBrcfFy-mLBSVteo7LM5D4L_hQmcHTQ&s" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-950 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h5 class="font-black text-xl leading-none">Prof. Sumit Tripathi</h5>
+                        <p class="text-indigo-300 text-xs font-bold uppercase mt-2">HOD Information Technology</p>
+                    </div>
+                </div>
+                <div class="md:col-span-2 bg-indigo-100 rounded-[32px] p-10 flex flex-col justify-center">
+                    <h4 class="text-3xl font-black text-indigo-900 mb-4">Want to meet them?</h4>
+                    <p class="text-indigo-700/70 mb-8 font-medium">Schedule a campus visit and interact with our world-class faculty in person.</p>
+                    <button @click="page = 'contact'" class="bg-indigo-600 text-white w-max px-8 py-4 rounded-xl font-bold hover:shadow-xl transition">Book a Consultation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-24 px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-black text-slate-900">Life at Anika Institute</h2>
+        <div class="w-20 h-1.5 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+            <div class="flex items-start space-x-6">
+                <div class="text-4xl font-black text-indigo-100">01</div>
+                <div>
+                    <h5 class="text-xl font-black mb-2">Global Exposure</h5>
+                    <p class="text-slate-500">Student exchange programs with top universities in UK, USA, and Singapore.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-6">
+                <div class="text-4xl font-black text-indigo-100">02</div>
+                <div>
+                    <h5 class="text-xl font-black mb-2">Research Focused</h5>
+                    <p class="text-slate-500">Dedicated labs for AI, Robotics, and Biotechnology with 24/7 access for researchers.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-6">
+                <div class="text-4xl font-black text-indigo-100">03</div>
+                <div>
+                    <h5 class="text-xl font-black mb-2">Placements</h5>
+                    <p class="text-slate-500">100% placement assistance with an average package of 12 LPA in top-tier companies.</p>
+                </div>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="absolute -inset-4 bg-indigo-600/10 rounded-[50px] rotate-3"></div>
+            <img src="https://t3.ftcdn.net/jpg/11/40/80/88/360_F_1140808849_LH1FOcQhoI1sAX8JhLP7w6qBo7PhynhC.jpg" alt="Life at Campus" class="relative rounded-[40px] shadow-2xl w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+</section>
+        
+
+<!-- academics -->
+<section x-show="page === 'academics'" x-cloak class="animate-fade max-w-7xl mx-auto py-20 px-6 relative">
+    
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute top-1/2 -right-24 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl -z-10"></div>
+
+    <div class="text-center mb-16">
+        <h2 class="text-sm font-black text-indigo-600 uppercase tracking-[0.3em] mb-3 bg-indigo-50 inline-block px-4 py-1 rounded-full">Academics</h2>
+        <h3 class="text-5xl font-black text-slate-900 mb-6 leading-tight">Academic <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Departments</span></h3>
+        <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            Explore our wide range of undergraduate and postgraduate programs designed for the modern world with cutting-edge technology and research.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8 text-center mb-24">
+        <div class="bg-white shadow-xl shadow-indigo-100 rounded-[30px] p-8 border-b-8 border-indigo-600 transform hover:-translate-y-2 transition duration-300">
+            <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-graduation-cap text-2xl"></i>
+            </div>
+            <h3 class="text-4xl font-black text-slate-900">50+</h3>
+            <p class="text-slate-500 font-bold uppercase text-xs tracking-widest mt-2">Programs Offered</p>
+        </div>
+        <div class="bg-white shadow-xl shadow-purple-100 rounded-[30px] p-8 border-b-8 border-purple-600 transform hover:-translate-y-2 transition duration-300">
+            <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-chalkboard-teacher text-2xl"></i>
+            </div>
+            <h3 class="text-4xl font-black text-slate-900">200+</h3>
+            <p class="text-slate-500 font-bold uppercase text-xs tracking-widest mt-2">Faculty Experts</p>
+        </div>
+        <div class="bg-white shadow-xl shadow-emerald-100 rounded-[30px] p-8 border-b-8 border-emerald-500 transform hover:-translate-y-2 transition duration-300">
+            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-chart-line text-2xl"></i>
+            </div>
+            <h3 class="text-4xl font-black text-slate-900">95%</h3>
+            <p class="text-slate-500 font-bold uppercase text-xs tracking-widest mt-2">Placement Rate</p>
+        </div>
+        <div class="bg-white shadow-xl shadow-blue-100 rounded-[30px] p-8 border-b-8 border-blue-600 transform hover:-translate-y-2 transition duration-300">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-handshake text-2xl"></i>
+            </div>
+            <h3 class="text-4xl font-black text-slate-900">30+</h3>
+            <p class="text-slate-500 font-bold uppercase text-xs tracking-widest mt-2">Industry Tie-ups</p>
+        </div>
+    </div>
+
+    <div class="mb-24 bg-slate-900 rounded-[50px] p-12 text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 right-0 p-20 bg-indigo-500/20 rounded-full blur-[100px]"></div>
+        <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <h2 class="text-4xl font-black mb-6 italic">Global Recognition</h2>
+                <p class="text-slate-400 mb-8 leading-relaxed text-lg">
+                    Our academic excellence is recognized worldwide. We follow international standards of pedagogy and curriculum design, ensuring our students are competitive on a global scale.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-6 p-4 bg-white/5 rounded-2xl border border-white/10">
+                        <div class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">#1</div>
+                        <span class="text-xl font-bold italic tracking-wide">Best Emerging Tech Institute 2025</span>
+                    </div>
+                    <div class="flex items-center space-x-6 p-4 bg-white/5 rounded-2xl border border-white/10">
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center font-black text-xl shadow-lg">A++</div>
+                        <span class="text-xl font-bold italic tracking-wide">NAAC Accredited Grade</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white/10 p-8 rounded-[30px] text-center backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-500">
+                    <i class="fas fa-globe-americas text-4xl mb-4 text-indigo-400"></i>
+                    <p class="font-bold text-sm uppercase tracking-tighter">International Exchanges</p>
+                </div>
+                <div class="bg-white/10 p-8 rounded-[30px] text-center backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-500">
+                    <i class="fas fa-microscope text-4xl mb-4 text-purple-400"></i>
+                    <p class="font-bold text-sm uppercase tracking-tighter">Research Grants</p>
+                </div>
+                <div class="bg-white/10 p-8 rounded-[30px] text-center backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-500">
+                    <i class="fas fa-briefcase text-4xl mb-4 text-emerald-400"></i>
+                    <p class="font-bold text-sm uppercase tracking-tighter">Corporate Mentorship</p>
+                </div>
+                <div class="bg-white/10 p-8 rounded-[30px] text-center backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-500">
+                    <i class="fas fa-certificate text-4xl mb-4 text-orange-400"></i>
+                    <p class="font-bold text-sm uppercase tracking-tighter">Global Certifications</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-20">
+        <h2 class="text-3xl font-black text-indigo-600 mb-10 italic flex items-center">
+            <span class="bg-indigo-600 w-12 h-1 mr-4 rounded-full"></span> Our Academic Stars
+        </h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-white shadow-2xl shadow-slate-200 rounded-[35px] p-8 text-center border border-slate-100 hover:scale-105 transition duration-500">
+                <div class="relative inline-block mb-6">
+                    <img src="https://i.pinimg.com/736x/1a/00/25/1a00251c66cee1c4ffcbe34c8543b1be.jpg" class="w-32 h-32 rounded-full mx-auto border-4 border-indigo-100 object-cover">
+                    <div class="absolute bottom-0 right-0 bg-yellow-400 text-slate-900 w-10 h-10 rounded-full flex items-center justify-center border-4 border-white">
+                        <i class="fas fa-trophy text-xs"></i>
+                    </div>
+                </div>
+                <h3 class="font-black text-2xl text-slate-900">Deepika Yadav</h3>
+                <p class="text-indigo-600 font-bold">MCA Topper 2025</p>
+            </div>
+            <div class="bg-white shadow-2xl shadow-slate-200 rounded-[35px] p-8 text-center border border-slate-100 hover:scale-105 transition duration-500">
+                <div class="relative inline-block mb-6">
+                    <img src="https://static.vecteezy.com/system/resources/previews/051/688/995/non_2x/smiling-young-male-university-student-standing-isolate-on-transparency-background-png.png" class="w-32 h-32 rounded-full mx-auto border-4 border-indigo-100 object-cover">
+                    <div class="absolute bottom-0 right-0 bg-yellow-400 text-slate-900 w-10 h-10 rounded-full flex items-center justify-center border-4 border-white">
+                        <i class="fas fa-medal text-xs"></i>
+                    </div>
+                </div>
+                <h3 class="font-black text-2xl text-slate-900">Rohit Verma</h3>
+                <p class="text-indigo-600 font-bold">B.Tech CS Gold Medalist</p>
+            </div>
+            <div class="bg-white shadow-2xl shadow-slate-200 rounded-[35px] p-8 text-center border border-slate-100 hover:scale-105 transition duration-500">
+                <div class="relative inline-block mb-6">
+                    <img src="https://www.shutterstock.com/image-photo/pretty-indianasian-college-girl-holding-600w-661009837.jpg" class="w-32 h-32 rounded-full mx-auto border-4 border-indigo-100 object-cover">
+                    <div class="absolute bottom-0 right-0 bg-yellow-400 text-slate-900 w-10 h-10 rounded-full flex items-center justify-center border-4 border-white">
+                        <i class="fas fa-award text-xs"></i>
+                    </div>
+                </div>
+                <h3 class="font-black text-2xl text-slate-900">Anushka Shekhar</h3>
+                <p class="text-indigo-600 font-bold">IT Department Topper</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-32">
+        <h2 class="text-3xl font-black text-indigo-600 mb-10 italic flex items-center">
+            <span class="bg-indigo-600 w-12 h-1 mr-4 rounded-full"></span> Innovative Research Projects
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-white shadow-xl rounded-[40px] overflow-hidden p-6 border border-slate-100 group">
+                <div class="overflow-hidden rounded-[30px] mb-6">
+                    <img src="https://www.electronicsforu.com/wp-contents/uploads/2019/12/1-9-500x418.jpg" class="w-full h-72 object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase">IT Department</span>
+                        <span class="text-slate-400 text-xs font-bold"><i class="far fa-calendar-alt mr-1"></i> 2025</span>
+                    </div>
+                    <h3 class="font-black text-2xl text-slate-900 mb-3 group-hover:text-indigo-600 transition">IOT Smart Automation Project</h3>
+                    <p class="text-slate-600 leading-relaxed italic">“Smart automation through IoT devices, showcasing innovation in robotics and connectivity.”</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-[40px] overflow-hidden p-6 border border-slate-100 group">
+                <div class="overflow-hidden rounded-[30px] mb-6">
+                    <img src="https://www.shutterstock.com/image-photo/engineers-working-together-analyzing-charts-260nw-2681276259.jpg" class="w-full h-72 object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-emerald-100 text-emerald-600 px-4 py-1 rounded-full text-xs font-bold uppercase">Biotech Dept</span>
+                        <span class="text-slate-400 text-xs font-bold"><i class="far fa-calendar-alt mr-1"></i> 2024</span>
+                    </div>
+                    <h3 class="font-black text-2xl text-slate-900 mb-3 group-hover:text-indigo-600 transition">Eco-Friendly Bio-Plastics</h3>
+                    <p class="text-slate-600 leading-relaxed italic">“Sustainable materials research aimed at reducing plastic waste and promoting green alternatives.”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-32 py-16 bg-white rounded-[50px] border border-slate-100 shadow-sm px-10" x-data="{ activeApproach: null }">
+        <h2 class="text-3xl font-black text-center text-slate-900 mb-4 italic">Our Pedagogical Approach</h2>
+        <p class="text-center text-slate-500 mb-16">Click on any method below to see how we teach</p>
+        
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="text-center group cursor-pointer" @click="activeApproach = (activeApproach === 'exp' ? null : 'exp')">
+                <div :class="activeApproach === 'exp' ? 'bg-blue-600 text-white rotate-12 scale-110' : 'bg-blue-50 text-blue-600'" 
+                     class="w-24 h-24 rounded-[30px] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-100 transition duration-500 transform group-hover:rotate-12">
+                    <i class="fas fa-book-reader text-4xl"></i>
+                </div>
+                <h4 class="font-black text-xl mb-4 text-slate-900">Experiential Learning</h4>
+                <p class="text-slate-500 leading-relaxed">Learning by doing through workshops and live project simulations.</p>
+                
+                <div x-show="activeApproach === 'exp'" x-collapse class="mt-6 text-left bg-blue-50 p-6 rounded-3xl border border-blue-100 shadow-inner">
+                    <p class="text-blue-800 text-sm font-medium">We believe theory is only half the battle. Our students participate in 48-hour hackathons, real-world case studies, and lab-intensive modules every semester.</p>
+                </div>
+            </div>
+
+            <div class="text-center group cursor-pointer" @click="activeApproach = (activeApproach === 'ment' ? null : 'ment')">
+                <div :class="activeApproach === 'ment' ? 'bg-purple-600 text-white rotate-12 scale-110' : 'bg-purple-50 text-purple-600'"
+                     class="w-24 h-24 rounded-[30px] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-100 transition duration-500 transform group-hover:rotate-12">
+                    <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                </div>
+                <h4 class="font-black text-xl mb-4 text-slate-900">Industry Mentorship</h4>
+                <p class="text-slate-500 leading-relaxed">Direct interaction with experts from top Fortune 500 companies.</p>
+                
+                <div x-show="activeApproach === 'ment'" x-collapse class="mt-6 text-left bg-purple-50 p-6 rounded-3xl border border-purple-100 shadow-inner">
+                    <p class="text-purple-800 text-sm font-medium">Every student is assigned a personal mentor from the industry to guide their career path, provide interview prep, and share insider knowledge.</p>
+                </div>
+            </div>
+
+            <div class="text-center group cursor-pointer" @click="activeApproach = (activeApproach === 'blend' ? null : 'blend')">
+                <div :class="activeApproach === 'blend' ? 'bg-orange-600 text-white rotate-12 scale-110' : 'bg-orange-50 text-orange-600'"
+                     class="w-24 h-24 rounded-[30px] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-100 transition duration-500 transform group-hover:rotate-12">
+                    <i class="fas fa-laptop-house text-4xl"></i>
+                </div>
+                <h4 class="font-black text-xl mb-4 text-slate-900">Blended Learning</h4>
+                <p class="text-slate-500 leading-relaxed">A perfect mix of traditional classroom and modern digital resources.</p>
+                
+                <div x-show="activeApproach === 'blend'" x-collapse class="mt-6 text-left bg-orange-50 p-6 rounded-3xl border border-orange-100 shadow-inner">
+                    <p class="text-orange-800 text-sm font-medium">We use a 'flipped classroom' model where students access lectures online and use class time for high-energy discussions and problem-solving.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-32 mb-10">
+        <h2 class="text-3xl font-black text-indigo-600 mb-10 italic flex items-center justify-center">
+            <i class="fas fa-university mr-4"></i> Government Academic Resources
+        </h2>
+        <div class="relative overflow-hidden py-10 bg-slate-50 rounded-[40px] border border-slate-100">
+            <div class="animate-scroll">
+                <div class="flex-shrink-0 bg-white shadow-xl shadow-slate-200 rounded-[30px] p-8 w-72 text-center mx-4 border-t-4 border-orange-400 group hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900">SWAYAM</h3>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">Free online education platform.</p>
+                </div>
+                <div class="flex-shrink-0 bg-white shadow-xl shadow-slate-200 rounded-[30px] p-8 w-72 text-center mx-4 border-t-4 border-blue-400 group hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-satellite-dish text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900">SWAYAM PRABHA</h3>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">Educational DTH channels.</p>
+                </div>
+                <div class="flex-shrink-0 bg-white shadow-xl shadow-slate-200 rounded-[30px] p-8 w-72 text-center mx-4 border-t-4 border-purple-400 group hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900">NAD</h3>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">National Academic Depository.</p>
+                </div>
+                <div class="flex-shrink-0 bg-white shadow-xl shadow-slate-200 rounded-[30px] p-8 w-72 text-center mx-4 border-t-4 border-emerald-400 group hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900">E-PG Pathshala</h3>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">Gateway to PG courses.</p>
+                </div>
+                <div class="flex-shrink-0 bg-white shadow-xl shadow-slate-200 rounded-[30px] p-8 w-72 text-center mx-4 border-t-4 border-orange-400">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900">SWAYAM</h3>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">Free online education platform.</p>
+                </div>
+                <div class="flex-shrink-0 bg-white shadow-xl shadow-slate-200 rounded-[30px] p-8 w-72 text-center mx-4 border-t-4 border-blue-400">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-satellite-dish text-2xl"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900">SWAYAM PRABHA</h3>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">Educational DTH channels.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+</style>
+
+<!-- gallery -->
+
+        <section x-data="{ videoPlaying: false }" x-show="page === 'gallery'" x-cloak class="animate-fade max-w-7xl mx-auto py-16 px-6 relative">
+    
+    <div class="absolute -top-10 -left-10 w-64 h-64 bg-indigo-100/50 rounded-full blur-3xl -z-10"></div>
+
+    <div class="text-center mb-16 space-y-4">
+        <h2 class="text-sm font-black text-indigo-600 uppercase tracking-[0.3em] bg-indigo-50 inline-block px-4 py-1 rounded-full">Experience Anika</h2>
+        <h3 class="text-6xl font-black text-slate-900 leading-tight">Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Universe</span></h3>
+        <p class="text-slate-500 max-w-2xl mx-auto text-xl italic">"Where infrastructure meets innovation and students find their soul."</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-10 mb-24">
+        <div class="bg-gradient-to-br from-indigo-600 to-indigo-900 rounded-[50px] p-10 text-white relative shadow-2xl hover:-translate-y-2 transition-transform duration-500">
+            <h4 class="text-3xl font-black mb-4">Live @ Anika</h4>
+            <p class="text-indigo-100 opacity-80 mb-8 leading-relaxed">Daily snapshots of innovation and student joy captured in real-time.</p>
+            <div class="flex items-center gap-4">
+                <div class="flex -space-x-3">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=A" class="w-10 h-10 rounded-full border-2 border-indigo-400">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=B" class="w-10 h-10 rounded-full border-2 border-indigo-400">
+                </div>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-200">1.2k+ Moments Uploaded</span>
+            </div>
+            <i class="fas fa-bolt absolute -bottom-6 -right-6 text-9xl text-white/5"></i>
+        </div>
+
+        <div class="bg-white border border-slate-100 rounded-[50px] p-10 flex flex-col items-center text-center shadow-xl hover:shadow-2xl transition duration-500">
+            <div class="w-20 h-20 bg-purple-50 text-purple-600 rounded-3xl flex items-center justify-center text-3xl mb-6">
+                <i class="fas fa-vr-cardboard"></i>
+            </div>
+            <h4 class="text-2xl font-black text-slate-900 mb-4">360° VR Tour</h4>
+            <p class="text-slate-500 text-sm mb-8">Virtual Reality experience of our Google-collab Labs and smart auditoriums.</p>
+            <button class="mt-auto w-full py-4 bg-slate-900 text-white rounded-2xl font-black hover:bg-indigo-600 transition">Enter Metaverse</button>
+        </div>
+
+        <div class="bg-slate-900 rounded-[50px] p-10 text-white shadow-2xl flex flex-col justify-between">
+            <p class="text-2xl font-serif italic text-slate-300 leading-relaxed">"The campus isn't just about walls; it's about the breakthroughs we have here."</p>
+            <div class="mt-10 flex items-center gap-4">
+                <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center font-bold">RM</div>
+                <div>
+                    <p class="font-black text-white">Rohan Mehta</p>
+                    <p class="text-xs text-slate-500">Innovation Lead</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-24 px-4">
+        <div class="relative group rounded-[60px] overflow-hidden shadow-3xl bg-black border-[12px] border-white h-[500px]">
+            <template x-if="!videoPlaying">
+                <div class="absolute inset-0 z-20">
+                    <img src="https://images.unsplash.com/photo-1523050853063-91363677387f?q=80&w=2070" class="w-full h-full object-cover opacity-70 transition duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+                        <button @click="videoPlaying = true" class="w-28 h-28 bg-white/10 backdrop-blur-xl border-2 border-white/30 rounded-full flex items-center justify-center hover:scale-110 transition duration-500 group/play">
+                            <i class="fas fa-play text-4xl ml-2 group-hover/play:text-indigo-400"></i>
+                        </button>
+                        <h4 class="mt-8 text-5xl font-black tracking-tighter">Experience The Pulse</h4>
+                        <p class="mt-2 text-indigo-200 uppercase tracking-widest font-bold">Click to play campus cinematic</p>
+                    </div>
+                </div>
+            </template>
+
+            <template x-if="videoPlaying">
+    <iframe 
+        class="w-full h-full relative z-10" 
+        src="https://www.youtube.com/embed/mMrwccb-yYA?autoplay=1&rel=0" 
+        title="MVLU College Infrastructure"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</template>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-24">
+        <div class="md:col-span-7 group relative rounded-[50px] overflow-hidden shadow-xl h-[450px] border-2 border-slate-50">
+            <img src="https://media.gettyimages.com/id/173598452/photo/university-in-autumn.jpg?s=612x612&w=gi&k=20&c=yqefDkarUFdQCoMIHvs7PifmgeTdJ8F-3nGxLrN_8Eo=" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex items-end p-12">
+                <div>
+                    <span class="bg-indigo-600 text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase mb-4 inline-block">Infrastructure</span>
+                    <h5 class="text-4xl font-black text-white">Central Plaza</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-5 bg-purple-50 rounded-[50px] p-12 flex flex-col justify-center border border-purple-100">
+            <div class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center text-3xl text-purple-600 mb-8 shadow-lg">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h4 class="text-3xl font-black text-slate-900 mb-4 italic leading-tight text-purple-600">Hall of Fame</h4>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Recognizing the pioneers. Our students recently won the Global Tech-Hackathon 2025.</p>
+            <div class="flex gap-4">
+                <div class="bg-white px-6 py-3 rounded-2xl shadow-sm text-sm font-bold">#Innovation</div>
+                <div class="bg-white px-6 py-3 rounded-2xl shadow-sm text-sm font-bold">#TechWinners</div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white py-16 px-6 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto mb-16 grid md:grid-cols-4 gap-10">
+        <div class="bg-indigo-50 border border-indigo-100 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-2xl transition duration-500">
+            <div class="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-100">
+                <i class="fas fa-wifi text-3xl"></i>
+            </div>
+            <h5 class="font-black text-slate-900 text-xl">High-Speed Campus</h5>
+            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                1 Gbps fiber connectivity throughout our 20-acre lush green campus.
+            </p>
+        </div>
+
+        <div class="bg-purple-50 border border-purple-100 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-2xl transition duration-500">
+            <div class="w-16 h-16 bg-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-purple-100">
+                <i class="fas fa-dumbbell text-3xl"></i>
+            </div>
+            <h5 class="font-black text-slate-900 text-xl">Pro Fitness Center</h5>
+            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                World-class gym and indoor sports arena with advanced fitness equipment.
+            </p>
+        </div>
+
+        <div class="bg-orange-50 border border-orange-100 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-2xl transition duration-500">
+            <div class="w-16 h-16 bg-orange-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-orange-100">
+                <i class="fas fa-coffee text-3xl"></i>
+            </div>
+            <h5 class="font-black text-slate-900 text-xl">Starbucks Cafe</h5>
+            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                Premium hangouts for student collaboration and relaxed social gatherings.
+            </p>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-100 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-2xl transition duration-500">
+            <div class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-emerald-100">
+                <i class="fas fa-shield-alt text-3xl"></i>
+            </div>
+            <h5 class="font-black text-slate-900 text-xl">24/7 Security</h5>
+            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                AI-powered surveillance ensuring safe zones across the campus.
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="group relative rounded-[40px] overflow-hidden shadow-xl h-96 hover:scale-105 transition duration-500">
+            <img src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?..." class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <p class="text-white font-black text-2xl border-b-4 border-white pb-2 italic">Central Library</p>
+            </div>
+        </div>
+        <div class="group relative rounded-[40px] overflow-hidden shadow-xl h-96 hover:scale-105 transition duration-500">
+            <img src="https://ada-nc.com/wp-content/uploads/2020/08/Parkland-High-School-ADA-01.jpg" class="w-full h-full object-cover">
+             <div class="absolute inset-0 bg-purple-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <p class="text-white font-black text-2xl border-b-4 border-white pb-2 italic">Academic Block</p>
+            </div>
+        </div>
+        <div class="group relative rounded-[40px] overflow-hidden shadow-xl h-96 hover:scale-105 transition duration-500">
+            <img src="https://images.collegexpress.com/blog/all-about-labs-special-equipment-college-campuses.jpg" class="w-full h-full object-cover">
+             <div class="absolute inset-0 bg-pink-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <p class="text-white font-black text-2xl border-b-4 border-white pb-2 italic">Innovation Lab</p>
+            </div>
+        </div>
+        <div class="group relative rounded-[40px] overflow-hidden shadow-xl h-96 hover:scale-105 transition duration-500">
+            <img src="https://www.christiancollege.ac.in/wp-content/uploads/2025/01/canteen-2.jpg" class="w-full h-full object-cover">
+             <div class="absolute inset-0 bg-pink-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <p class="text-white font-black text-2xl border-b-4 border-white pb-2 italic">Student Caffeteria</p>
+             </div>
+        </div>
+        <div class="group relative rounded-[40px] overflow-hidden shadow-xl h-96 hover:scale-105 transition duration-500">
+            <img src="https://blr.stpaulscollege.edu.in/wp-content/uploads/Library-4-768x432.jpg" class="w-full h-full object-cover">
+             <div class="absolute inset-0 bg-pink-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <p class="text-white font-black text-2xl border-b-4 border-white pb-2 italic">Digital Library</p>
+             </div>
+        </div>
+        <div class="group relative rounded-[40px] overflow-hidden shadow-xl h-96 hover:scale-105 transition duration-500">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?..." class="w-full h-full object-cover">
+             <div class="absolute inset-0 bg-pink-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <p class="text-white font-black text-2xl border-b-4 border-white pb-2 italic">Convocation Day</p>
+             </div>
+        </div>
+    </div>
+</section>
+
+        <!--------------------STUDENT------------------------->
+<section x-show="page === 'student corner'" x-cloak class="animate-fade max-w-7xl mx-auto py-16 px-6">
+    <div class="mb-12 flex flex-col items-center justify-center text-center group">
+        <div class="h-1 w-20 bg-indigo-600 rounded-full mb-4 group-hover:w-32 transition-all duration-300"></div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-3">
+            <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter text-slate-900 leading-none">STUDENT'S CORNER</h2>
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 bg-slate-100 text-slate-500 rounded-lg not-italic">Personal Insights</span>
+        </div>
+        <p class="text-[11px] font-bold text-indigo-500 uppercase tracking-[0.3em] mt-3 opacity-80">Performance Metrics & Live Tracking</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div class="bg-white p-6 rounded-[30px] border shadow-sm flex items-center space-x-4">
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-check-circle"></i></div>
+            <div><p class="text-[10px] uppercase font-black text-slate-400">Attendance</p><p class="text-xl font-black">88%</p></div>
+        </div>
+        <div class="bg-white p-6 rounded-[30px] border shadow-sm flex items-center space-x-4">
+            <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-star"></i></div>
+            <div><p class="text-[10px] uppercase font-black text-slate-400">CGPA</p><p class="text-xl font-black">9.2</p></div>
+        </div>
+        <div class="bg-white p-6 rounded-[30px] border shadow-sm flex items-center space-x-4">
+            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-book-reader"></i></div>
+            <div><p class="text-[10px] uppercase font-black text-slate-400">E-Resources</p><p class="text-xl font-black">90%</p></div>
+        </div>
+        <div class="bg-white p-6 rounded-[30px] border shadow-sm flex items-center space-x-4">
+            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-bus"></i></div>
+            <div><p class="text-[10px] uppercase font-black text-slate-400">Transport tracker</p><p class="text-xl font-black">50%</p></div>
+        </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-10 mb-20"> <div class="lg:col-span-2 space-y-8">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="relative rounded-[40px] overflow-hidden h-64 group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <div><span class="text-indigo-400 text-[10px] font-black uppercase">Cultural</span><h5 class="text-white font-black text-lg">Dance Fusion 2026</h5></div>
+                    </div>
+                </div>
+                <div class="relative rounded-[40px] overflow-hidden h-64 group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <div><span class="text-orange-400 text-[10px] font-black uppercase">Sports</span><h5 class="text-white font-black text-lg">Athletics Championship</h5></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[40px] p-10 border shadow-sm">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-2xl font-black text-slate-900">Digital Notice Board</h3>
+                    <span @click="openInternalPortal('Notice Board Archive')" class="text-xs font-bold text-indigo-600 cursor-pointer hover:underline">View All Notices →</span>
+                </div>
+                <div class="space-y-6">
+                    <template x-for="notice in notices" :key="notice.id">
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-transparent hover:border-indigo-100 transition group">
+                            <div class="flex justify-between items-start mb-2">
+                                <span :class="{'bg-indigo-100 text-indigo-600': notice.tag === 'Event', 'bg-green-100 text-green-600': notice.tag === 'Result', 'bg-amber-100 text-amber-600': notice.tag === 'Notice'}" class="px-3 py-1 rounded-full text-[9px] font-black uppercase" x-text="notice.tag"></span>
+                                <span class="text-[10px] text-slate-400 font-bold" x-text="notice.date"></span>
+                            </div>
+                            <h4 class="font-black text-slate-800 mb-1 group-hover:text-indigo-600 transition" x-text="notice.title"></h4>
+                            <p class="text-slate-500 text-xs leading-relaxed" x-text="notice.content"></p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-8">
+            <div class="bg-indigo-900 rounded-[50px] p-8 text-white shadow-2xl relative overflow-hidden">
+                <h3 class="text-xl font-black mb-8 flex items-center"><i class="fas fa-bolt mr-3 text-yellow-400"></i> Upcoming Events</h3>
+                <div class="space-y-8">
+                    <div class="relative pl-8 border-l border-indigo-700">
+                        <div class="absolute -left-[5px] top-0 w-2 h-2 bg-yellow-400 rounded-full"></div>
+                        <span class="text-[10px] font-bold text-indigo-400 uppercase">March 15, 2026</span>
+                        <h5 class="font-bold text-sm mt-1">Tech-Anika Hackathon</h5>
+                    </div>
+                    <div class="relative pl-8 border-l border-indigo-700">
+                        <div class="absolute -left-[5px] top-0 w-2 h-2 bg-indigo-400 rounded-full"></div>
+                        <span class="text-[10px] font-bold text-indigo-400 uppercase">April 02, 2026</span>
+                        <h5 class="font-bold text-sm mt-1">Cultural Fest 'AURA'</h5>
+                    </div>
+                </div>
+                <button @click="openRegistration()" class="w-full mt-10 py-4 bg-white text-indigo-900 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-yellow-400 transition">Register for Events</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-20"> 
+        <div class="bg-[#1e1b4b] rounded-[45px] p-10 border border-slate-800 shadow-2xl relative overflow-hidden w-full">
+            <div class="flex justify-between items-center mb-10 relative z-10">
+                <h2 class="text-3xl font-black text-white italic tracking-tighter">Academic Vault</h2>
+                <button class="text-xs font-black text-yellow-400 uppercase tracking-widest border-b-2 border-yellow-400 pb-1 hover:text-white hover:border-white transition-all">Request New Resource</button>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+                <template x-for="resource in academicResources" :key="resource.title">
+                    <div @click="selectedResource = resource; showVaultModal = true" class="bg-white/5 border border-white/10 p-6 rounded-[32px] hover:bg-white/10 transition-all group cursor-pointer hover:scale-105 transition-transform">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-indigo-600/30 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform"><i :class="resource.icon"></i></div>
+                            <span class="text-[10px] font-black uppercase tracking-widest" :class="resource.available ? 'text-emerald-400' : 'text-rose-400'" x-text="resource.status"></span>
+                        </div>
+                        <h4 class="text-white font-bold text-lg leading-tight" x-text="resource.title"></h4>
+                        <p class="text-slate-400 text-xs mt-1 font-medium" x-text="resource.author"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-20">
+        <div class="bg-gradient-to-br from-teal-900 to-indigo-900 rounded-[50px] p-8 text-white shadow-xl relative overflow-hidden group">
+            <div class="relative z-10 flex items-center justify-between mb-8">
+                <div>
+                    <h3 class="text-xl font-black italic tracking-tighter text-teal-400">Academic Calendar</h3>
+                    <p class="text-indigo-300 text-[10px] font-bold uppercase tracking-widest">Key Exam & Deadline Dates</p>
+                </div>
+                <div class="w-10 h-10 bg-teal-400/10 rounded-2xl flex items-center justify-center border border-teal-400/20"><i class="fas fa-calendar-day text-teal-400 text-sm"></i></div>
+            </div>
+            <div class="relative z-10 space-y-6">
+                <template x-for="event in academicCalendar" :key="event.title">
+                    <div class="relative flex items-center gap-4 p-4 rounded-3xl bg-white/5 border border-white/10 hover:border-teal-400/50 transition">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-teal-500/20 flex flex-col items-center justify-center border border-teal-500/20">
+                            <span class="text-[9px] font-black leading-none text-white/80" x-text="event.month"></span>
+                            <span class="text-lg font-black leading-none text-teal-300" x-text="event.day"></span>
+                        </div>
+                        <div><h5 class="text-sm font-black leading-tight" x-text="event.title"></h5><p class="text-[10px] text-indigo-300" x-text="event.detail"></p></div>
+                        <div class="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-teal-400 rounded-full group-hover:scale-125 transition-transform"></div>
+                    </div>
+                </template>
+            </div>
+            <button @click="showCalendarModal = true" class="mt-8 relative z-10 w-full py-4 bg-white text-indigo-950 rounded-2xl font-black uppercase text-[10px] hover:bg-teal-400 transition-all shadow-xl active:scale-95">View Full Calendar</button>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-16">
+        <div class="bg-white rounded-[30px] py-12 px-10 border border-slate-100 shadow-[0_25px_60px_rgba(0,0,0,0.1)] flex flex-col md:flex-row items-center group relative gap-8">
+            <div class="flex items-center gap-6 md:border-r-2 border-slate-50 md:pr-12 shrink-0">
+                <div class="w-24 h-24 bg-indigo-600 rounded-[30px] flex items-center justify-center text-white text-4xl shadow-2xl shadow-indigo-200 group-hover:scale-105 transition-transform duration-500"><i class="fas fa-award"></i></div>
+                <div class="space-y-2">
+                    <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tighter">Skill Badges</h3>
+                    <div class="flex items-center gap-2 bg-emerald-50 px-4 py-1.5 rounded-full w-fit">
+                        <span class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></span>
+                        <p class="text-[14px] text-emerald-700 font-black uppercase tracking-widest">Active Now</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 flex items-center gap-8 px-4 overflow-x-auto no-scrollbar py-4">
+                <template x-for="badge in [{name: 'Top Scorer', icon: 'fa-trophy', color: 'bg-amber-400', light: 'bg-amber-50/70', shadow: 'shadow-amber-200'},{name: 'Fast Learner', icon: 'fa-bolt', color: 'bg-blue-500', light: 'bg-blue-50/70', shadow: 'shadow-blue-200'},{name: 'Consistent', icon: 'fa-calendar-check', color: 'bg-emerald-500', light: 'bg-emerald-50/70', shadow: 'shadow-emerald-200'},{name: 'Innovator', icon: 'fa-lightbulb', color: 'bg-purple-500', light: 'bg-purple-50/70', shadow: 'shadow-purple-200'}]" :key="badge.name">
+                    <div :class="badge.light" class="flex items-center gap-5 px-8 py-7 rounded-[35px] border-2 border-white hover:shadow-2xl hover:bg-white transition-all duration-300 shrink-0 min-w-[240px]">
+                        <div :class="[badge.color, badge.shadow]" class="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl shadow-xl"><i :class="`fas ${badge.icon}`"></i></div>
+                        <span class="text-xl font-black text-slate-800 whitespace-nowrap" x-text="badge.name"></span>
+                    </div>
+                </template>
+            </div>
+            <div class="flex items-center gap-8 md:border-l-2 border-slate-50 md:pl-12 shrink-0">
+                <div class="text-right space-y-1">
+                    <p class="text-[14px] text-slate-400 font-black uppercase tracking-[0.3em]">Global Rank</p>
+                    <div class="flex items-center justify-end gap-3"><span class="text-6xl font-black text-slate-900 tracking-tighter">#04</span></div>
+                </div>
+                <div class="relative w-24 h-24 group/rank shrink-0">
+                    <svg class="w-full h-full transform -rotate-90">
+                        <circle cx="48" cy="48" r="42" stroke="currentColor" stroke-width="10" fill="transparent" class="text-slate-100" />
+                        <circle cx="48" cy="48" r="42" stroke="currentColor" stroke-width="10" fill="transparent" stroke-dasharray="263.8" stroke-dashoffset="60" class="text-indigo-600 transition-all duration-1000" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center text-indigo-400 text-2xl"><i class="fas fa-rocket group-hover/rank:animate-bounce"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div x-show="showRegModal" x-cloak class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-900/80 backdrop-blur-md">
+        <div @click.away="showRegModal = false" class="bg-white rounded-[40px] w-full max-w-lg p-10 shadow-2xl animate-fade">
+            <div x-show="regStep === 1">
+                <h2 class="text-2xl font-black mb-2">Select Your Event</h2>
+                <p class="text-slate-500 text-sm mb-8">Pick the event you want to join this semester.</p>
+                <div class="space-y-4">
+                    <div @click="nextRegStep('Tech-Anika Hackathon')" class="p-6 border-2 border-slate-100 rounded-3xl hover:border-indigo-600 transition cursor-pointer flex justify-between items-center group">
+                        <span class="font-bold">Tech-Anika Hackathon</span><i class="fas fa-arrow-right text-slate-300 group-hover:text-indigo-600"></i>
+                    </div>
+                    <div @click="nextRegStep('Cultural Fest AURA')" class="p-6 border-2 border-slate-100 rounded-3xl hover:border-indigo-600 transition cursor-pointer flex justify-between items-center group">
+                        <span class="font-bold">Cultural Fest 'AURA'</span><i class="fas fa-arrow-right text-slate-300 group-hover:text-indigo-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div x-show="regStep === 2">
+                <h2 class="text-2xl font-black mb-2">Enter Details</h2>
+                <p class="text-slate-500 text-sm mb-8">Registering for <span class="text-indigo-600 font-bold" x-text="selectedEvent"></span></p>
+                <div class="space-y-4">
+                    <input type="text" x-model="regName" placeholder="Full Name" class="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-indigo-600 outline-none">
+                    <button @click="completeRegistration()" class="w-full py-4 bg-indigo-600 text-white rounded-2xl font-black uppercase text-xs tracking-widest">Confirm Registration</button>
+                    <button @click="regStep = 1" class="w-full text-xs font-bold text-slate-400 uppercase">Back</button>
+                </div>
+            </div>
+            <div x-show="regStep === 3" class="text-center py-10">
+                <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"><i class="fas fa-check"></i></div>
+                <h2 class="text-2xl font-black mb-2">Success!</h2>
+                <p class="text-slate-500 text-sm mb-8">You have successfully registered for <span class="font-bold" x-text="selectedEvent"></span></p>
+                <button @click="showRegModal = false" class="px-10 py-4 bg-slate-900 text-white rounded-2xl font-black uppercase text-xs tracking-widest">Close Portal</button>
+            </div>
+        </div>
+    </div>
+
+    <div x-show="showVaultModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0" x-cloak>
+        <div @click.away="showVaultModal = false" class="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl transform transition-all">
+            <template x-if="selectedResource">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6"><i :class="selectedResource.icon" class="text-3xl"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2" x-text="selectedResource.title"></h3>
+                    <p class="text-slate-500 mb-6">By <span class="font-semibold text-slate-700" x-text="selectedResource.author"></span></p>
+                    <div class="inline-block px-4 py-2 rounded-full text-sm font-bold mb-8" :class="selectedResource.available ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'"><i class="fas fa-circle text-[8px] mr-2"></i><span x-text="selectedResource.status"></span></div>
+                    <div class="bg-slate-50 rounded-2xl p-6 text-left space-y-4 mb-8">
+                        <div class="flex justify-between"><span class="text-slate-400">Resource Type:</span><span class="font-bold text-slate-700">Digital Archive</span></div>
+                        <div class="flex justify-between"><span class="text-slate-400">Access Level:</span><span class="font-bold text-slate-700">Student/Staff</span></div>
+                    </div>
+                    <button @click="showVaultModal = false" class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">Close Details</button>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div x-show="showCalendarModal" class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-900/90 backdrop-blur-sm" x-transition.opacity x-cloak>
+        <div @click.away="showCalendarModal = false" class="bg-white w-full max-w-4xl rounded-[40px] overflow-hidden shadow-2xl">
+            <div class="bg-teal-600 p-8 text-white flex justify-between items-center">
+                <div><h2 class="text-3xl font-black italic tracking-tighter">Academic Year 2026</h2><p class="text-teal-100 font-bold uppercase text-xs tracking-widest">Full Schedule & Holidays</p></div>
+                <button @click="showCalendarModal = false" class="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-2xl transition flex items-center justify-center"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="p-8 max-h-[60vh] overflow-y-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b-2 border-slate-100">
+                            <th class="py-4 text-slate-400 font-black uppercase text-[10px]">Date</th>
+                            <th class="py-4 text-slate-400 font-black uppercase text-[10px]">Event Description</th>
+                            <th class="py-4 text-slate-400 font-black uppercase text-[10px]">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-50">
+                        <template x-for="item in fullCalendarData" :key="item.date">
+                            <tr>
+                                <td class="py-4 font-bold text-slate-700" x-text="item.date"></td>
+                                <td class="py-4 font-black text-slate-900" x-text="item.event"></td>
+                                <td class="py-4 text-[10px]">
+                                    <span :class="{'bg-teal-100 text-teal-600': item.type === 'Exam', 'bg-amber-100 text-amber-600': item.type === 'Holiday', 'bg-indigo-100 text-indigo-600': item.type === 'Academic'}" class="px-3 py-1 rounded-full font-black uppercase" x-text="item.type"></span>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</section>
+</style>
+</section>
+
+<!--- payment ----->
+
+        <section x-show="page === 'pay'" x-cloak class="animate-fade max-w-xl mx-auto py-20 px-6">
+    <div class="bg-white p-10 rounded-[40px] shadow-2xl border border-indigo-50 text-center">
+        
+        <div x-show="payStep === 'form'">
+            <div class="flex items-center space-x-3 mb-8 text-left">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center"><i class="fas fa-credit-card"></i></div>
+                <h2 class="text-2xl font-black">Fee Payment</h2>
+            </div>
+            <div class="space-y-6">
+                <input x-model="payData.id" type="text" placeholder="Application or Enrollment ID" class="w-full p-4 bg-slate-50 border rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500">
+                <div class="grid grid-cols-2 gap-4">
+                    <select class="p-4 bg-slate-50 border rounded-2xl outline-none">
+                        <option>Tuition Fee</option>
+                        <option>Exam Fee</option>
+                        <option>Hostel Fee</option>
+                    </select>
+                    <div class="space-y-1">
+    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Enter Amount</label>
+    
+    <div class="relative">
+        <input 
+            type="number" 
+            x-model="payData.amount" 
+            placeholder="Amount (INR)"
+            class="w-full px-5 py-4 rounded-2xl border-2 transition-all outline-none text-sm font-bold"
+            :class="payData.amount > 100000 ? 'border-red-500 bg-red-50 text-red-600' : 'border-slate-100 focus:border-indigo-500 bg-slate-50 text-slate-700'"
+        >
+        
+        <template x-if="payData.amount > 100000">
+            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-red-500">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+        </template>
+    </div>
+
+    <div class="h-4"> <template x-if="payData.amount > 100000">
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-tighter animate-pulse ml-1">
+                Limit Exceeded: Maximum ₹1,00,000 only
+            </p>
+        </template>
+    </div>
+</div>
+                </div>
+                <button @click="startPaymentFlow()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black hover:bg-indigo-600 transition">PROCEED TO SECURE GATEWAY</button>
+                <div class="flex justify-center space-x-4 opacity-40">
+                    <i class="fab fa-cc-visa text-2xl"></i>
+                    <i class="fab fa-cc-mastercard text-2xl"></i>
+                    <i class="fab fa-google-pay text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="payStep === 'scanner'" class="space-y-6 py-4">
+            <h3 class="text-xl font-black">Scan QR Code</h3>
+            <div class="p-6 bg-slate-50 rounded-3xl border-2 border-dashed border-indigo-200 inline-block relative">
+                <img src="https://www.cnet.com/a/img/resize/f79daa2916d5016c0eae39d9f011fb45c286384a/hub/2021/09/29/84563ecd-e228-4ac2-826d-41c5478ce588/cnet-qr-code.jpg?auto=webp&width=1200" class="mx-auto rounded-lg shadow-lg">
+                <div class="absolute inset-0 border-2 border-indigo-500 rounded-3xl animate-pulse pointer-events-none"></div>
+            </div>
+            <p class="text-sm font-bold text-slate-500">Confirming payment for <span class="text-indigo-600" x-text="'₹' + payData.amount"></span></p>
+            <div class="flex items-center justify-center space-x-2 text-indigo-600 font-bold text-xs uppercase tracking-widest">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <span>Waiting for confirmation...</span>
+            </div>
+        </div>
+
+        <div x-show="payStep === 'success'" class="py-10 space-y-6">
+            <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-5xl animate-bounce">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div>
+                <h2 class="text-3xl font-black text-slate-900">Payment Successful!</h2>
+                <p class="text-slate-500 mt-2">Your transaction has been processed.</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl text-left border border-slate-100">
+                <div class="flex justify-between text-xs font-bold text-slate-400 uppercase">
+                    <span>Transaction ID</span>
+                    <span>Status</span>
+                </div>
+                <div class="flex justify-between font-black text-slate-800 mt-1">
+                    <span x-text="'TXN' + Math.floor(Math.random()*1000000)"></span>
+                    <span class="text-green-600">PAID</span>
+                </div>
+            </div>
+            <button @click="payStep = 'form'; page = 'home'" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black hover:bg-indigo-600 transition">BACK TO HOME</button>
+        </div>
+    </div>
+</section>
+
+<!-----------------------------CONTACT PAGE--------------------->
+        <section x-show="page === 'contact'" x-cloak class="animate-fade py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 bg-white p-12 rounded-[50px] shadow-sm border mb-16 relative overflow-hidden">
+            <div>
+                <h2 class="text-4xl font-black mb-6 tracking-tighter">Get in Touch</h2>
+                <p class="text-slate-500 mb-8 font-medium">Have questions about admissions? Our team at Anika Institute is here to help you.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span class="font-bold text-slate-700">Knowledge Park, Mumbai, India</span>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <span class="font-bold text-slate-700">+91 22 4567 8900</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <input 
+    type="text" 
+    id="contactName" 
+    placeholder="Your Name" 
+    required
+    oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')"
+    class="w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium"
+>
+
+<div x-data="{ email: '', isValid: true }">
+    <input 
+        type="email" 
+        id="contactEmail" 
+        x-model="email"
+        @input="isValid = /^\S+@\S+\.\S+$/.test(email)"
+        placeholder="Your Email (e.g. name@gmail.com)" 
+        required
+        :class="!isValid && email.length > 0 ? 'border-red-500 focus:ring-red-500' : 'border-slate-100 focus:ring-indigo-500'"
+        class="w-full p-4 bg-slate-50 border rounded-2xl outline-none transition-all font-medium"
+    >
+    
+    <p x-show="!isValid && email.length > 0" 
+       class="text-red-500 text-xs mt-2 ml-2 font-bold animate-pulse">
+        Please enter a valid email (must include @ and .com)
+    </p>
+</div>
+                <textarea id="contactMessage" placeholder="Your Message" rows="4" class="w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium resize-none"></textarea>
+                
+                <button @click="sendContactMessage()" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-100 uppercase tracking-widest">
+                    Send Message
+                </button>
+            </div>
+        </div>
+
+        <div x-show="showSuccessModal" x-transition class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm px-6">
+            <div class="bg-white rounded-[40px] p-10 max-w-sm w-full text-center shadow-2xl border border-slate-50">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-2">Message Sent!</h3>
+                <p class="text-slate-500 mb-8 font-medium">We'll get back to you soon.</p>
+                <button @click="showSuccessModal = false" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black shadow-lg">OKAY</button>
+            </div>
+        </div>
+
+        <div class="w-full h-[400px] rounded-[50px] overflow-hidden shadow-2xl border-4 border-white group">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120610.96342203993!2d72.80231904791557!3d19.147427289568917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" class="w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!--- apply  addmissions ----->
+        <section x-show="page === 'apply'" x-cloak class="animate-fade max-w-xl mx-auto py-20 px-6">
+            <div class="bg-white p-12 rounded-[50px] shadow-2xl border border-slate-100">
+                <h2 class="text-3xl font-black mb-2 text-center">Apply for Admission</h2>
+                <p class="text-center text-slate-500 mb-10 text-sm">Provide your official details as per your Aadhaar/Passport.</p>
+                <form @submit.prevent="submitForm()" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+<input 
+    x-model="formData.first" 
+    @input="formData.first = formData.first.replace(/[^a-zA-Z\s]/g, '')"
+    required 
+    type="text" 
+    placeholder="First Name" 
+    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500"
+>
+
+<input 
+    x-model="formData.last" 
+    @input="formData.last = formData.last.replace(/[^a-zA-Z\s]/g, '')"
+    required 
+    type="text" 
+    placeholder="Last Name" 
+    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500"
+>
+                    </div>
+                    <input x-model="formData.email" required type="email" placeholder="Email Address" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase ml-2">Preferred Program</label>
+                        <select x-model="formData.program" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 font-bold text-slate-600">
+                            <option>B.Tech Computer Science</option>
+                            <option>MBA (Global Business)</option>
+                            <option>B.Sc Data Analytics</option>
+                             <option>B.Sc Information Technology</option>
+                             <option>Biotechnology </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-slate-900 transition-all shadow-xl shadow-indigo-100">SUBMIT APPLICATION</button>
+                </form>
+            </div>
+        </section>
+
+
+        
+        <section x-show="page === 'status'" x-cloak class="animate-fade max-w-xl mx-auto py-32 px-6 text-center">
+            <h2 class="text-4xl font-black mb-4">Track Application</h2>
+            <p class="text-slate-500 mb-12">Enter your 7-digit Application Reference ID.</p>
+            <div class="bg-white p-10 rounded-[50px] shadow-2xl border border-slate-100 flex flex-col space-y-6">
+                <input x-model="searchID" type="text" placeholder="SIT-0000" class="w-full p-6 bg-slate-50 border rounded-3xl text-center text-2xl font-black uppercase tracking-[10px] outline-none border-indigo-100 focus:border-indigo-500">
+                <button @click="checkStatus()" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black">FETCH RECORDS</button>
+            </div>
+            <template x-if="searchResult">
+                <div class="mt-10 p-10 bg-white border-2 border-green-500 rounded-[40px] text-left relative overflow-hidden shadow-xl">
+                    <div class="absolute top-0 right-0 p-4 bg-green-500 text-white font-black text-[10px] rounded-bl-xl uppercase tracking-widest" x-text="searchResult.status"></div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2" x-text="searchResult.first + ' ' + searchResult.last"></h3>
+                    <p class="text-sm text-slate-500 font-bold mb-4" x-text="searchResult.program"></p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-xs font-bold text-indigo-600 uppercase tracking-widest">Decision Pending Review</div>
+                </div>
+            </template>
+        </section>
+
+
+        <section x-show="page === 'login'" x-cloak class="animate-fade max-w-xl mx-auto py-20 px-6">
+            <div class="bg-white p-12 rounded-[50px] shadow-2xl border border-slate-100">
+                <h2 class="text-3xl font-black mb-8 text-center text-slate-900" x-text="isRegistering ? 'Create Account' : 'Portal Login'"></h2>
+                
+                <div class="flex bg-slate-100 p-1.5 rounded-2xl mb-10">
+                    <button @click="loginType = 'admin'" :class="loginType === 'admin' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="flex-1 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Admin</button>
+                    <button @click="loginType = 'staff'" :class="loginType === 'staff' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="flex-1 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Staff</button>
+                    <button @click="loginType = 'student'" :class="loginType === 'student' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="flex-1 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Student</button>
+                </div>
+
+                <!-- LOGIN FORM -->
+                <form x-show="!isRegistering" @submit.prevent="handleLogin()" class="space-y-6">
+                    <div class="space-y-4">
+                        <div class="relative">
+                            <i class="fas fa-user absolute left-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                            <input x-model="loginData.username" required type="text" placeholder="Username" class="w-full pl-14 pr-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 font-bold transition">
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-lock absolute left-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                            <input x-model="loginData.password" required type="password" placeholder="Password" class="w-full pl-14 pr-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 font-bold transition">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-slate-900 transition-all shadow-xl shadow-indigo-100 uppercase tracking-widest">Login to <span x-text="loginType"></span></button>
+                    <p class="text-center text-xs font-bold text-slate-400">
+                        Don't have an account? <span @click="isRegistering = true" class="text-indigo-600 cursor-pointer hover:underline">Register Now</span>
+                    </p>
+                </form>
+
+                <!-- REGISTRATION FORM -->
+                <form x-show="isRegistering" @submit.prevent="handleRegister()" class="space-y-6">
+                    <div class="space-y-4">
+                        <div class="relative">
+                            <i class="fas fa-user absolute left-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                            <input x-model="registerData.username" required type="text" placeholder="Choose Username" class="w-full pl-14 pr-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 font-bold transition">
+                                </div>
+                        <div class="relative">
+                            <i class="fas fa-lock absolute left-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                            <input x-model="registerData.password" required type="password" placeholder="Password" class="w-full pl-14 pr-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 font-bold transition">
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-shield-alt absolute left-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                            <input x-model="registerData.confirmPassword" required type="password" placeholder="Confirm Password" class="w-full pl-14 pr-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 font-bold transition">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black text-lg hover:bg-indigo-600 transition-all shadow-xl uppercase tracking-widest text-[11px]">Register as <span x-text="loginType"></span></button>
+                    <p class="text-center text-xs font-bold text-slate-400">
+                        Already have an account? <span @click="isRegistering = false" class="text-indigo-600 cursor-pointer hover:underline">Login here</span>
+                    </p>
+                </form>
+                
+                <p class="mt-8 text-center text-slate-400 text-[10px] font-black uppercase tracking-widest">Secure Multi-Role Access</p>
+            </div>
+        </section>
+
+        <!-----STAFF PAGE------>
+        <section x-show="page === 'staff'" x-cloak class="animate-fade max-w-7xl mx-auto py-20 px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-black">Staff Dashboard</h2>
+                    <p class="text-slate-500 font-bold uppercase text-[10px] tracking-widest mt-2">Departmental Operations</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-[40px] border shadow-sm">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-xl"><i class="fas fa-calendar-alt"></i></div>
+                    <h3 class="text-xl font-black mb-2">Class Schedule</h3>
+                    <p class="text-slate-500 text-sm mb-6 font-medium">Manage and view your weekly teaching sessions.</p>
+                    <button @click="viewCalendar()" class="text-blue-600 font-black text-xs uppercase tracking-widest hover:underline">View Calendar →</button>
+                </div>
+                <div class="bg-white p-10 rounded-[40px] border shadow-sm">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6 text-xl"><i class="fas fa-file-signature"></i></div>
+                    <h3 class="text-xl font-black mb-2">Grade Entry</h3>
+                    <p class="text-slate-500 text-sm mb-6 font-medium">Update semester results and student performance data.</p>
+                    <button @click="openInternalPortal('Academic Portal')" class="text-purple-600 font-black text-xs uppercase tracking-widest hover:underline">Open Portal →</button>
+                </div>
+                <div class="bg-white p-10 rounded-[40px] border shadow-sm">
+                    <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6 text-xl"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="text-xl font-black mb-2">Leave Request</h3>
+                    <p class="text-slate-500 text-sm mb-6 font-medium">Apply for vacation or professional development leave.</p>
+                    <button @click="applyForLeave()" class="text-pink-600 font-black text-xs uppercase tracking-widest hover:underline">Apply Now →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-----STUDENT PAGE------>
+        <section x-show="page === 'student'" x-cloak class="animate-fade max-w-7xl mx-auto py-20 px-6">
+            <div class="flex items-center space-x-6 mb-12">
+                <div class="w-20 h-20 rounded-full border-4 border-indigo-600 p-1">
+                    <img src="https://i.pravatar.cc/100?img=12" class="w-full h-full rounded-full object-cover">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-black">Student Portal</h2>
+                    <p class="text-slate-500 font-bold uppercase text-[10px] tracking-widest mt-2">Enrollment ID: SIT-2024-889</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-3 space-y-8">
+                    <div class="bg-indigo-900 rounded-[50px] p-12 text-white shadow-2xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-black mb-2">Academic Progress</h3>
+                            <p class="text-indigo-300 mb-8 font-bold">Bachelor of Technology (CS)</p>
+                            
+                            <div class="grid md:grid-cols-3 gap-10">
+                                <div>
+                                    <p class="text-[10px] uppercase font-black text-indigo-400 mb-1">Current CGPA</p>
+                                    <p class="text-3xl font-black tracking-tight">8.84</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-black text-indigo-400 mb-1">Credits Earned</p>
+                                    <p class="text-3xl font-black tracking-tight">72 / 160</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-black text-indigo-400 mb-1">Attendance</p>
+                                    <p class="text-3xl font-black tracking-tight">92%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute right-0 bottom-0 w-64 h-64 bg-indigo-800 rounded-full blur-[100px] opacity-50 -mr-32 -mb-32"></div>
+                    </div>
+
+                    <div class="bg-white rounded-[40px] border shadow-sm p-10">
+                        <h4 class="font-black text-xl mb-8">Registered Courses</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-6 bg-slate-50 rounded-2xl">
+                                <div class="flex items-center space-x-6">
+                                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-600"><i class="fas fa-code"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-slate-800">Advanced Data Structures</h5>
+                                        <p class="text-xs text-slate-500 font-bold">CS402 | Dr. Anita Desai</p>
+                                    </div>
+                                </div>
+                                <span class="bg-green-100 text-green-700 font-black text-[10px] px-4 py-2 rounded-full uppercase">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between p-6 bg-slate-50 rounded-2xl">
+                                <div class="flex items-center space-x-6">
+                                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-600"><i class="fas fa-brain"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-slate-800">Artificial Intelligence</h5>
+                                        <p class="text-xs text-slate-500 font-bold">CS405 | Prof. Mike Ross</p>
+                                    </div>
+                                </div>
+                                <span class="bg-green-100 text-green-700 font-black text-[10px] px-4 py-2 rounded-full uppercase">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-[40px] border shadow-sm p-8 text-center">
+                        <h4 class="font-black text-lg mb-6">Upcoming Exam</h4>
+                        <div class="inline-block p-6 bg-amber-50 rounded-3xl mb-4 border border-amber-100">
+                            <p class="text-amber-600 font-black text-3xl">22</p>
+                            <p class="text-amber-600 font-bold text-[10px] uppercase">March</p>
+                        </div>
+                        <h5 class="font-black text-slate-800">Database Systems</h5>
+                        <p class="text-xs text-slate-500 mt-1 mb-6 font-bold">Main Hall | 10:00 AM</p>
+                        <button @click="downloadDocument('Hall Ticket - ' + userRole)" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-widest shadow-lg hover:bg-indigo-600 transition">Download Admit Card</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+       <!-----ADMIN PAGE------>
+
+        <section x-show="page === 'admin'" x-cloak class="animate-fade max-w-7xl mx-auto py-20 px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-black text-slate-900">Registrar Command Center</h2>
+                    <p class="text-slate-500 font-bold uppercase text-[10px] tracking-widest mt-2">Unified Management Portal</p>
+                </div>
+                
+                <div class="flex bg-slate-100 p-1.5 rounded-2xl w-full md:w-auto overflow-x-auto whitespace-nowrap">
+                    <button @click="adminTab = 'applications'" :class="adminTab === 'applications' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Applications</button>
+                    <button @click="adminTab = 'notices'" :class="adminTab === 'notices' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Notice Board</button>
+                    <button @click="adminTab = 'curriculum'" :class="adminTab === 'curriculum' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Curriculum</button>
+                    <button @click="adminTab = 'registrations'" :class="adminTab === 'registrations' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Registrations</button>
+                    <button @click="adminTab = 'fees'" :class="adminTab === 'fees' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Fee Records</button>
+                    <button @click="adminTab = 'users'" :class="adminTab === 'users' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">User Access</button>
+                    <button @click="adminTab = 'contacts'" :class="adminTab === 'contacts' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500'" class="px-6 py-2.5 rounded-xl font-black text-[10px] uppercase tracking-widest transition">Contacts</button>
+                </div>
+            </div>
+
+            <!-- TAB: APPLICATIONS -->
+            <div x-show="adminTab === 'applications'" class="animate-fade bg-white rounded-[40px] shadow-sm border border-slate-100 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900 text-slate-300 text-[10px] uppercase font-black tracking-widest">
+                        <tr>
+                            <th class="p-6">ID</th>
+                            <th class="p-6">Student Info</th>
+                            <th class="p-6">Program</th>
+                            <th class="p-6">Status</th>
+                            <th class="p-6">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <template x-for="app in applications" :key="app.id">
+                            <tr class="hover:bg-slate-50/50 transition">
+                                <td class="p-6 font-black text-indigo-600" x-text="app.id"></td>
+                                <td class="p-6">
+                                    <p class="font-black text-slate-900" x-text="app.first + ' ' + app.last"></p>
+                                    <p class="text-xs text-slate-400" x-text="app.email"></p>
+                                </td>
+                                <td class="p-6 text-sm font-bold text-slate-600" x-text="app.program"></td>
+                                <td class="p-6">
+                                    <span :class="app.status === 'Accepted' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'" class="px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter" x-text="app.status"></span>
+                                </td>
+                                <td class="p-6">
+                                    <button @click="updateStatus(app.id, 'Accepted')" class="bg-indigo-600 text-white w-10 h-10 rounded-xl hover:bg-slate-900 transition"><i class="fas fa-check"></i></button>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TAB: NOTICE BOARD -->
+            <div x-show="adminTab === 'notices'" class="animate-fade grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-10 rounded-[40px] border shadow-sm">
+                    <h3 class="text-xl font-black mb-8">Post New Notification</h3>
+                    <div class="space-y-6">
+                        <input x-model="newNotice.title" type="text" placeholder="Notice Title" class="w-full p-4 bg-slate-50 border rounded-2xl outline-none focus:border-indigo-500">
+                        <select x-model="newNotice.tag" class="w-full p-4 bg-slate-50 border rounded-2xl outline-none">
+                            <option value="Notice">General Notice</option>
+                            <option value="Event">Event Alert</option>
+                            <option value="Result">Exam Result</option>
+                        </select>
+                        <textarea x-model="newNotice.content" placeholder="Notification details..." rows="4" class="w-full p-4 bg-slate-50 border rounded-2xl outline-none focus:border-indigo-500"></textarea>
+                        <button @click="postNotice()" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition">PUBLISH TO STUDENT PORTAL</button>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-10 rounded-[40px] border-2 border-dashed border-slate-200">
+                    <h3 class="text-xl font-black mb-6 text-slate-400">Live Preview</h3>
+                    <div class="p-8 bg-white rounded-3xl shadow-lg border border-indigo-100">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-[9px] font-black uppercase" x-text="newNotice.tag"></span>
+                        </div>
+                        <h4 class="font-black text-xl text-slate-800 mb-2" x-text="newNotice.title || 'Untitled Notice'"></h4>
+                        <p class="text-sm text-slate-500 italic" x-text="newNotice.content || 'Start typing to see preview...'"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: CONTACT BOARD -->
+            <template x-if="adminTab === 'contacts'">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <table class="w-full text-left border-collapse">
+            <thead class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                <tr>
+                    <th class="px-6 py-4 font-bold">Sender Name</th>
+                    <th class="px-6 py-4 font-bold">Email Address</th>
+                    <th class="px-6 py-4 font-bold">Message</th>
+                    <th class="px-6 py-4 font-bold text-right">Date</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                <template x-for="c in contacts" :key="c.id">
+                    <tr class="hover:bg-indigo-50/30 transition-colors">
+                        <td class="px-6 py-4 font-semibold text-slate-800" x-text="c.name"></td>
+                        <td class="px-6 py-4 text-indigo-600 font-medium" x-text="c.email"></td>
+                        <td class="px-6 py-4 text-slate-600 italic" x-text="c.message"></td>
+                        <td class="px-6 py-4 text-right text-slate-400 text-sm" x-text="new Date(c.date).toLocaleDateString()"></td>
+                    </tr>
+                </template>
+                <template x-if="contacts.length === 0">
+                    <tr>
+                        <td colspan="4" class="px-6 py-10 text-center text-gray-400 italic">No messages received yet.</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>
+
+            <!-- TAB: CURRICULUM -->
+            <div x-show="adminTab === 'curriculum'" class="animate-fade space-y-8">
+                <div class="bg-white p-10 rounded-[40px] border shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-xl font-black">Sync Curriculum PDF</h3>
+                        <p class="text-slate-500 text-sm">Upload a PDF to automatically update subject details.</p>
+                    </div>
+                    <button @click="simulatePdfUpload()" class="px-8 py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-indigo-600 transition shadow-lg"><i class="fas fa-file-pdf mr-2"></i> UPLOAD & SYNC PDF</button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <template x-for="(dept, dIndex) in departments" :key="dIndex">
+                        <div class="bg-white p-10 rounded-[40px] border shadow-sm group hover:border-indigo-100 transition-all">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="flex items-center space-x-4 w-full">
+                                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center shrink-0"><i :class="dept.icon"></i></div>
+                                    <input @change="updateCurriculum(dIndex)" type="text" x-model="dept.name" class="font-black text-xl bg-transparent border-none outline-none focus:ring-0 text-slate-800 w-full">
+                                </div>
+                                <i class="fas fa-edit text-slate-200 group-hover:text-indigo-600 transition"></i>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-black uppercase tracking-[2px] mb-6">Department Subjects</p>
+                            <div class="space-y-3">
+                                <template x-for="(sub, sIndex) in dept.subjects" :key="sIndex">
+                                    <div class="relative group/item">
+                                        <input type="text" 
+                                               :value="sub"
+                                               @input="updateSubject(dIndex, sIndex, $event.target.value)"
+                                               class="w-full p-4 bg-slate-50 border border-transparent rounded-2xl text-xs font-bold text-slate-600 focus:bg-white focus:border-indigo-200 focus:ring-4 focus:ring-indigo-50 outline-none transition-all">
+                                        <i class="fas fa-pen absolute right-6 top-1/2 -translate-y-1/2 text-[10px] text-slate-300 opacity-0 group-hover/item:opacity-100 transition"></i>
+                                    </div>
+                                </template>
+                            </div>
+                            <button @click="dept.subjects.push('New Subject')" class="mt-6 text-[10px] font-black text-indigo-600 uppercase tracking-widest hover:text-slate-900 transition">+ Add Subject</button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- TAB: REGISTRATIONS -->
+            <div x-show="adminTab === 'registrations'" class="animate-fade bg-white rounded-[40px] shadow-sm border border-slate-100 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900 text-slate-300 text-[10px] uppercase font-black tracking-widest">
+                        <tr>
+                            <th class="p-6">ID</th>
+                            <th class="p-6">Student Name</th>
+                            <th class="p-6">Event Title</th>
+                            <th class="p-6">Reg Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <template x-for="reg in registrations" :key="reg.id">
+                            <tr class="hover:bg-slate-50/50 transition">
+                                <td class="p-6 font-black text-indigo-600" x-text="'REG-' + reg.id"></td>
+                                <td class="p-6 font-black text-slate-900" x-text="reg.name"></td>
+                                <td class="p-6 text-sm font-bold text-slate-600" x-text="reg.event"></td>
+                                <td class="p-6 text-xs text-slate-400 font-bold" x-text="reg.date"></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TAB: FEES -->
+            <div x-show="adminTab === 'fees'" class="animate-fade bg-white rounded-[40px] shadow-sm border border-slate-100 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900 text-slate-300 text-[10px] uppercase font-black tracking-widest">
+                        <tr>
+                            <th class="p-6">Txn ID</th>
+                            <th class="p-6">Student</th>
+                            <th class="p-6">Fee Type</th>
+                            <th class="p-6">Amount</th>
+                            <th class="p-6">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <template x-for="pay in payments" :key="pay.id">
+                            <tr class="hover:bg-slate-50/50 transition">
+                                <td class="p-6 font-black text-indigo-600" x-text="pay.id"></td>
+                                <td class="p-6 font-black text-slate-900" x-text="pay.student"></td>
+                                <td class="p-6 text-xs font-bold text-slate-400 uppercase" x-text="pay.type"></td>
+                                <td class="p-6 font-black text-slate-900" x-text="'₹' + pay.amount.toLocaleString()"></td>
+                                <td class="p-6"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[9px] font-black uppercase">PAID</span></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TAB: USERS -->
+            <div x-show="adminTab === 'users'" class="animate-fade bg-white rounded-[40px] shadow-sm border border-slate-100 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900 text-slate-300 text-[10px] uppercase font-black tracking-widest">
+                        <tr>
+                            <th class="p-6">Username</th>
+                            <th class="p-6">Portal Role</th>
+                            <th class="p-6">Security</th>
+                            <th class="p-6">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <template x-for="usr in users" :key="usr.username">
+                            <tr class="hover:bg-slate-50/50 transition">
+                                <td class="p-6 font-black text-slate-900" x-text="usr.username"></td>
+                                <td class="p-6"><span class="bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full text-[9px] font-black uppercase" x-text="usr.role"></span></td>
+                                <td class="p-6 text-[10px] text-slate-400 font-bold">••••••••</td>
+                                <td class="p-6">
+                                    <button @click="alert('Security reset link sent to ' + usr.username)" class="text-[10px] font-black text-indigo-600 hover:text-red-500 transition">RESET PASS</button>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-----FOOTER PAGE------>
+<footer class="bg-gradient-to-r from-slate-900 to-indigo-900 text-white py-12 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+
+    <!-- About -->
+    <div class="space-y-3">
+      <h2 class="text-xl font-black tracking-tighter">
+        ANIKA <span class="text-indigo-400">INSTITUTE</span>
+      </h2>
+      <p class="text-slate-400 text-xs leading-relaxed">
+        Accredited by UGC & NAAC A++.<br>
+        Leading the way in digital education and research excellence since 1995.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="space-y-2">
+      <h4 class="font-bold text-[10px] uppercase tracking-[2px] text-indigo-400">Contact Us</h4>
+      <p class="text-slate-300 text-xs"><i class="fas fa-envelope mr-2"></i> admissions@anika.edu.in</p>
+      <p class="text-slate-300 text-xs"><i class="fas fa-phone mr-2"></i> +91 22 9876 5432</p>
+    </div>
+
+    <!-- Office Hours -->
+    <div class="space-y-2">
+      <h4 class="font-bold text-[10px] uppercase tracking-[2px] text-indigo-400">Office Hours</h4>
+      <p class="text-slate-300 text-xs">Mon - Fri: 9:00 AM - 5:00 PM</p>
+      <p class="text-slate-300 text-xs">Sat: 10:00 AM - 2:00 PM</p>
+    </div>
+
+    <!-- Connect -->
+    <div class="space-y-4">
+      <h4 class="font-bold text-[10px] uppercase tracking-[2px] text-indigo-400">Connect</h4>
+      <div class="flex space-x-4">
+        <a href="https://www.facebook.com/YourPageName" target="_blank" rel="noopener noreferrer"
+           class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-indigo-500 hover:text-white transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/YourHandle" target="_blank" rel="noopener noreferrer"
+           class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-sky-400 hover:text-white transition">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/YourProfile" target="_blank" rel="noopener noreferrer"
+           class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-blue-700 hover:text-white transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/YourHandle" target="_blank" rel="noopener noreferrer"
+           class="w-8 h-8 flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-pink-500 hover:text-white transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+{
+  "notices": [
+    {
+      "id": 1773680342476,
+      "title": "Persistence Check",
+      "content": "This should stay after refresh.",
+      "tag": "Notice",
+      "date": "March 16, 2026"
+    },
+    {
+      "id": 1,
+      "title": "Annual Sports Meet 2026",
+      "content": "Registrations are now open for all track and field events.",
+      "date": "March 10, 2026",
+      "tag": "Event"
+    },
+    {
+      "id": 2,
+      "title": "Semester Results - Winter 2025",
+      "content": "Results for the Winter 2025 semester have been published on the portal.",
+      "date": "March 05, 2026",
+      "tag": "Result"
+    },
+    {
+      "id": 3,
+      "title": "Global Tech Expo",
+      "content": "Selected projects will be showcased at the Mumbai Tech Park.",
+      "date": "March 20, 2026",
+      "tag": "Event"
+    },
+    {
+      "id": 4,
+      "title": "Placement Drive: Google Inc.",
+      "content": "Final year students are invited for the pre-placement talk.",
+      "date": "March 25, 2026",
+      "tag": "Notice"
+    },
+    {
+      "id": 5,
+      "title": "Hack-A-Thon Winners",
+      "content": "Team Blue has won the first prize in the national hackathon.",
+      "date": "March 02, 2026",
+      "tag": "Result"
+    },
+    {
+      "id": 6,
+      "title": "Workshop on Cyber Security",
+      "content": "Join us for a 2-day workshop on modern security practices.",
+      "date": "April 05, 2026",
+      "tag": "Event"
+    }
+  ],
+  "registrations": [
+    {
+      "id": 1,
+      "name": "Arjun Mehra",
+      "event": "Tech-Anika Hackathon",
+      "date": "2026-03-12"
+    },
+    {
+      "id": 2,
+      "name": "Sanya Gupta",
+      "event": "Cultural Fest AURA",
+      "date": "2026-03-14"
+    },
+    {
+      "id": 1773680926899,
+      "name": "Test Student",
+      "event": "Tech-Anika Hackathon",
+      "date": "2026-03-16"
+    }
+  ],
+  "payments": [
+    {
+      "id": "TXN88291",
+      "student": "Rohit Verma",
+      "amount": 45000,
+      "type": "Tuition Fee",
+      "status": "PAID"
+    },
+    {
+      "id": "TXN99102",
+      "student": "Priya Singh",
+      "amount": 5000,
+      "type": "Exam Fee",
+      "status": "PAID"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Computer Science",
+      "desc": "Focus on AI, Cloud Computing, and Cybersecurity.",
+      "icon": "fas fa-laptop-code",
+      "subjects": [
+        "Data Structures",
+        "Cloud Computing",
+        "Cyber Security"
+      ]
+    },
+    {
+      "name": "Business (MBA)",
+      "desc": "Management programs for global trade and finance.",
+      "icon": "fas fa-chart-line",
+      "subjects": [
+        "Marketing",
+        "Finance",
+        "HR Management",
+        "New Subject"
+      ]
+    },
+    {
+      "name": "Robotics",
+      "desc": "Practical labs for mechatronics and automation.",
+      "icon": "fas fa-robot",
+      "subjects": [
+        "Control Systems",
+        "Sensors",
+        "Mechanical Design"
+      ]
+    },
+    {
+      "name": "Data Science",
+      "desc": "Advanced analytics, machine learning, and big data solutions.",
+      "icon": "fas fa-database",
+      "subjects": [
+        "Machine Learning",
+        "Big Data",
+        "Statistics"
+      ]
+    },
+    {
+      "name": "Information Technology",
+      "desc": "Expertise in software development and networking.",
+      "icon": "fas fa-network-wired",
+      "subjects": [
+        "Networking",
+        "Web Dev",
+        "Java"
+      ]
+    },
+    {
+      "name": "Biotechnology",
+      "desc": "Integration of biology and technology.",
+      "icon": "fas fa-dna",
+      "subjects": [
+        "Genetic Eng",
+        "Microbiology",
+        "Bio Chem"
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "id": "SIT-1001",
+      "first": "Rohit",
+      "last": "Verma",
+      "email": "rohit@example.com",
+      "program": "B.Tech CS",
+      "status": "Accepted"
+    },
+    {
+      "id": "SIT-1002",
+      "first": "Priya",
+      "last": "Singh",
+      "email": "priya@example.com",
+      "program": "MBA",
+      "status": "Accepted"
+    },
+    {
+      "id": "SIT-1003",
+      "first": "Anushka",
+      "last": "Shekhar",
+      "email": "anu@example.com",
+      "program": "B.Tech IT",
+      "status": "Accepted"
+    },
+    {
+      "id": "SIT-1004",
+      "first": "Deepika",
+      "last": "Yadav",
+      "email": "deepika@example.com",
+      "program": "Biotechnology",
+      "status": "Pending"
+    },
+    {
+      "id": "SIT-2164",
+      "first": "John",
+      "last": "Doe",
+      "email": "john.doe@example.com",
+      "program": "B.Tech Computer Science",
+      "status": "Pending"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1773682538370,
+      "name": "John ",
+      "email": "john@example.com",
+      "message": "General Inquiry from John",
+      "date": "2026-03-16T17:35:38.370Z"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "username": "staff",
+      "password": "staff",
+      "role": "staff"
+    },
+    {
+      "username": "student",
+      "password": "student",
+      "role": "student"
+    },
+    {
+      "username": "rohit",
+      "password": "password123",
+      "role": "student"
+    }
+  ]
+}
